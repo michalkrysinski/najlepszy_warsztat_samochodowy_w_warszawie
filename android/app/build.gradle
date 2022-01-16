@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.najlepszy_warsztat_samochodowy_w_warszawie"
+        applicationId "com.michalkrysinski.najlepszy_warsztat_samochodowy_w_warszawie"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

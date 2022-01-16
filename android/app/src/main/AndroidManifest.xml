@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.najlepszy_warsztat_samochodowy_w_warszawie">
+    package="com.michalkrysinski.najlepszy_warsztat_samochodowy_w_warszawie">
    <application
         android:label="najlepszy_warsztat_samochodowy_w_warszawie"
         android:name="${applicationName}"
