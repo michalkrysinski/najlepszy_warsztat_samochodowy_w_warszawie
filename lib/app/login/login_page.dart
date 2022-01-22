@@ -76,6 +76,16 @@ class _LoginPageState extends State<LoginPage> {
                     : 'Zaloguj się'),
               ),
               const SizedBox(height: 20),
+              if (isCreatingAccount == false) ...[
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      isCreatingAccount = true;
+                    });
+                  },
+                  child: const Text('Utwórz konto'),
+                ),
+              ],
               if (isCreatingAccount == true) ...[
                 TextButton(
                   onPressed: () {
@@ -83,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       isCreatingAccount = false;
                     });
                   },
-                  child: Text('Masz już konto?'),
+                  child: const Text('Masz już konto?'),
                 ),
               ],
             ],
