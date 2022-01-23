@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AddOpinionPageContent extends StatefulWidget {
@@ -14,6 +13,7 @@ class AddOpinionPageContent extends StatefulWidget {
 class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
   var workshopsName = '';
   var warsztatName = '';
+  var rating = 5.5;
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,24 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               });
             },
           ),
+          Slider(
+            onChanged: (newValue) {
+              setState(() {
+                rating = newValue;
+              });
+            },
+            value: rating,
+            min: 1.0,
+            max: 6.0,
+            divisions: 10,
+            label: rating.toString(),
+          ),
           ElevatedButton(
             onPressed: () {
               FirebaseFirestore.instance.collection('workshops').add({
                 'name': workshopsName,
                 'warsztat': warsztatName,
-                'raiting': 5.5,
+                'raiting': rating,
               });
             },
             child: const Text('Dodaj'),
