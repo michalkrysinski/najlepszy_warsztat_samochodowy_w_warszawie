@@ -11,7 +11,7 @@ class WorkshopsPageContent extends StatelessWidget {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: FirebaseFirestore.instance
             .collection('workshops')
-            .orderBy('rating', descending: true)
+            .orderBy('raiting', descending: true)
             .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
