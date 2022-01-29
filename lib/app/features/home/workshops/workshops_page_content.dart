@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:najlepszy_warsztat_samochodowy_w_warszawie/app/home/workshops/cubit/workshops_cubit.dart';
+import 'package:najlepszy_warsztat_samochodowy_w_warszawie/app/features/home/workshops/cubit/workshops_cubit.dart';
 
 class WorkshopsPageContent extends StatelessWidget {
   const WorkshopsPageContent({
