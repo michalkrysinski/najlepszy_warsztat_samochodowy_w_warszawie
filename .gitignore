@@ -9,6 +9,7 @@
 .history
 .svn/
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -30,11 +31,15 @@
 .pub-cache/
 .pub/
 /build/
+<<<<<<< HEAD
 C:\Users\Alincia\Documents\Apps\najlepszy_warsztat_samochodowy_w_warszawie\lib\firebase_options.dart
 
 
 
 
+=======
+lib/firebase_options.dart
+>>>>>>> 64310eb326c67b8f0c5f5c45a82de5641d50e681
 
 # Web related
 lib/generated_plugin_registrant.dart
