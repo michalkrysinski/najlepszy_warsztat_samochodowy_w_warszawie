@@ -22,8 +22,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 225, 235, 255),
       appBar: AppBar(
-        title: const Text('Najlepszy warsztat w Warszawie'),
+        title: const Text(
+          'Najlepszy warsztat w Warszawie',
+          style: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 68, 127, 255),
       ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
@@ -39,6 +48,9 @@ class _HomePageState extends State<HomePage> {
         return MyAccountPageContent(email: widget.user.email);
       }),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 68, 127, 255),
+        unselectedItemColor: Colors.white,
+        selectedItemColor: const Color.fromARGB(255, 151, 227, 255),
         currentIndex: currentIndex,
         onTap: (newIndex) {
           setState(() {

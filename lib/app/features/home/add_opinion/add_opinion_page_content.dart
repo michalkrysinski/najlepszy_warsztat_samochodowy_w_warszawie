@@ -23,25 +23,62 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
+            const SizedBox(
+              height: 210,
+            ),
             TextField(
-              decoration:
-                  const InputDecoration(hintText: 'Podaj nazwę warsztatu'),
+              style: const TextStyle(
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+              decoration: const InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 68, 127, 255), width: 5.0),
+                ),
+                hintText: 'Podaj nazwę warsztatu',
+                hintStyle: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                fillColor: Color.fromARGB(255, 255, 255, 255),
+                filled: true,
+              ),
               onChanged: (newValue) {
                 setState(() {
                   workshopsName = newValue;
                 });
               },
             ),
+            const SizedBox(
+              height: 5,
+            ),
             TextField(
-              decoration: const InputDecoration(hintText: 'Podaj nazwę ulicy'),
+              style: const TextStyle(
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+              decoration: const InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 68, 127, 255), width: 5.0),
+                ),
+                hintText: 'Podaj nazwę ulicy',
+                hintStyle: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                fillColor: Color.fromARGB(255, 255, 255, 255),
+                filled: true,
+              ),
               onChanged: (newValue) {
-                setState(() {
-                  warsztatName = newValue;
-                });
+                setState(
+                  () {
+                    warsztatName = newValue;
+                  },
+                );
               },
+            ),
+            const SizedBox(
+              height: 150,
             ),
             Slider(
               onChanged: (newValue) {
@@ -55,6 +92,9 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               divisions: 10,
               label: rating.toString(),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             ElevatedButton(
               onPressed: workshopsName.isEmpty || warsztatName.isEmpty
                   ? null
@@ -67,6 +107,17 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
                       widget.onSave();
                     },
               child: const Text('Dodaj'),
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 113, 158, 255),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

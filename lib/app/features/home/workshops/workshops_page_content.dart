@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:najlepszy_warsztat_samochodowy_w_warszawie/app/features/home/workshops/cubit/workshops_cubit.dart';
 
 class WorkshopsPageContent extends StatelessWidget {
@@ -15,11 +16,16 @@ class WorkshopsPageContent extends StatelessWidget {
         builder: (context, state) {
           if (state.errorMessage.isNotEmpty) {
             return Center(
-                child: Text('Something went wrong: ${state.errorMessage}'));
+              child: Text(
+                'Something went wrong: ${state.errorMessage}',
+              ),
+            );
           }
 
           if (state.isLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
 
           final documents = state.documents;
@@ -35,11 +41,28 @@ class WorkshopsPageContent extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(document['name']),
-                          Text(document['warsztat']),
+                          Text(
+                            document['name'],
+                            style: GoogleFonts.lato(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            document['warsztat'],
+                            style: GoogleFonts.lato(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
-                      Text(document['raiting'].toString()),
+                      Text(
+                        document['raiting'].toString(),
+                        style: GoogleFonts.lato(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
