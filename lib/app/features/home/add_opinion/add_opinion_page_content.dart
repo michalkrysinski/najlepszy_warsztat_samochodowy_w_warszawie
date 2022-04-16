@@ -35,7 +35,7 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               decoration: const InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: Color.fromARGB(255, 68, 127, 255), width: 5.0),
+                      color: Color.fromARGB(255, 234, 255, 0), width: 2.0),
                 ),
                 hintText: 'Podaj nazwę warsztatu',
                 hintStyle: TextStyle(
@@ -55,12 +55,17 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
             ),
             TextField(
               style: const TextStyle(
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: Color.fromARGB(
+                  255,
+                  0,
+                  0,
+                  0,
+                ),
               ),
               decoration: const InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: Color.fromARGB(255, 68, 127, 255), width: 5.0),
+                      color: Color.fromARGB(255, 234, 255, 0), width: 2.0),
                 ),
                 hintText: 'Podaj nazwę ulicy',
                 hintStyle: TextStyle(
@@ -78,7 +83,7 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               },
             ),
             const SizedBox(
-              height: 150,
+              height: 110,
             ),
             Slider(
               onChanged: (newValue) {
@@ -99,22 +104,25 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               onPressed: workshopsName.isEmpty || warsztatName.isEmpty
                   ? null
                   : () {
-                      FirebaseFirestore.instance.collection('workshops').add({
-                        'name': workshopsName,
-                        'warsztat': warsztatName,
-                        'raiting': rating,
-                      });
+                      FirebaseFirestore.instance.collection('workshops').add(
+                        {
+                          'name': workshopsName,
+                          'warsztat': warsztatName,
+                          'raiting': rating,
+                        },
+                      );
                       widget.onSave();
                     },
               child: const Text('Dodaj'),
               style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(255, 113, 158, 255),
+                primary: const Color.fromARGB(255, 234, 255, 0),
+                onPrimary: Colors.black,
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 40,
-                  vertical: 20,
+                  horizontal: 20,
+                  vertical: 12,
                 ),
                 textStyle: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),

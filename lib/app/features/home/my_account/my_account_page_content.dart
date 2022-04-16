@@ -24,13 +24,25 @@ class MyAccountPageContent extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
               context.read<RootCubit>().signOut();
             },
             child: const Text(
               'Wyloguj',
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 234, 255, 0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 12,
+              ),
+              textStyle: const TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+              ),
+              onPrimary: Colors.black,
             ),
           ),
         ],

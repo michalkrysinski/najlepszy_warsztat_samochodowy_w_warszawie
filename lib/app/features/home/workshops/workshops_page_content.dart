@@ -52,7 +52,6 @@ class WorkshopsPageContent extends StatelessWidget {
                             document['warsztat'],
                             style: GoogleFonts.lato(
                               color: const Color.fromARGB(255, 0, 0, 0),
-                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],

@@ -22,45 +22,54 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 225, 235, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text(
           'Najlepszy warsztat w Warszawie',
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 68, 127, 255),
+        backgroundColor: const Color.fromARGB(255, 106, 213, 49),
       ),
-      body: Builder(builder: (context) {
-        if (currentIndex == 0) {
-          return const WorkshopsPageContent();
-        }
-        if (currentIndex == 1) {
-          return AddOpinionPageContent(onSave: () {
-            setState(() {
-              currentIndex = 0;
-            });
-          });
-        }
-        return MyAccountPageContent(email: widget.user.email);
-      }),
+      body: Builder(
+        builder: (context) {
+          if (currentIndex == 0) {
+            return const WorkshopsPageContent();
+          }
+          if (currentIndex == 1) {
+            return AddOpinionPageContent(
+              onSave: () {
+                setState(
+                  () {
+                    currentIndex = 0;
+                  },
+                );
+              },
+            );
+          }
+          return MyAccountPageContent(email: widget.user.email);
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 68, 127, 255),
-        unselectedItemColor: Colors.white,
-        selectedItemColor: const Color.fromARGB(255, 151, 227, 255),
+        backgroundColor: const Color.fromARGB(255, 106, 213, 49),
+        unselectedItemColor: Colors.black,
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
         currentIndex: currentIndex,
         onTap: (newIndex) {
-          setState(() {
-            currentIndex = newIndex;
-          });
+          setState(
+            () {
+              currentIndex = newIndex;
+            },
+          );
         },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.reviews),
             label: 'Opinie',
+            backgroundColor: Color.fromARGB(255, 106, 213, 49),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add),
